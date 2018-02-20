@@ -2,6 +2,9 @@
   "name": "node-api-cli",
   "version": "1.0.0",
   "description": "Construtor de estrutura de node para criação de uma api apenas.",
+  "files": [
+    "generators"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +13,13 @@
     "nodeapi",
     "nodecli",
     "apinode",
-    "nodeapicli"
+    "nodeapicli",
+    "yeoman-generator"
   ],
   "author": "Josemberg Ferreira",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "yeoman-generator": "^2.0.3",
+    "yosay": "^2.0.1"
+  }
 }
