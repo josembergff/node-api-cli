@@ -11,10 +11,15 @@ exports.acao = (atual) => {
             atual.log("novo api");
             questionador.perguntasNovoApiNodeMongoose(atual)
                 .then(data => {
-                    console.log("retorno questionador", data);
                     atual.fs.copyTpl(
-                        atual.templatePath('./root'),
-                        atual.destinationPath('./generators/temp'), { entity: data.nomeProjeto, action: 'exemplo' }
+                        atual.templatePath('./padraoApiMongoose'),
+                        atual.destinationPath('./generators/temp'), {
+                            nomeProjeto: data.nomeProjeto,
+                            nomeExternoProjeto: data.nomeExternoProjeto,
+                            descricaoProjeto: data.descricaoProjeto,
+                            chaveMongo: data.chaveMongo,
+                            chaveSendgrid: data.chaveSendgrid
+                        }
                     );
                 });
             break;
