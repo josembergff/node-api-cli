@@ -14,7 +14,7 @@ Instalação
 1. Abra o terminal e aponte para a pasta destino do projeto;
 2. Execute no terminal:
 ```bash
-npm install -g yo node-api-cli
+npm install -g yo generator-node-api-cli
 ```
 3. E com isso o node-api-cli estará disponível para uso  executando:
 ```bash
