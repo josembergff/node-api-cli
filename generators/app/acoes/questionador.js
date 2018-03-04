@@ -31,4 +31,27 @@ exports.perguntasNovoApiNodeMongoose = (atual) => {
             default: 'configurarChaveSendgridDepois'
         }
     );
+};
+
+exports.perguntasNovaEntidade = (atual) => {
+    return atual.prompt(
+        {
+            type: 'input',
+            name: 'nomeEntidade',
+            message: 'Qual o nome da Entidade que será criada:',
+            default: 'Cliente'
+        },
+        {
+            type: 'input',
+            name: 'nomeExternoEntidade',
+            message: 'Qual o nome externo desta nova entidade:',
+            default: 'Cliente Comercial'
+        },
+        {
+            type: 'input',
+            name: 'nomeExternoEntidadePlural',
+            message: 'Qual o nome externo desta nova entidade no plural:',
+            default: 'Clientes'
+        }
+    );
 }

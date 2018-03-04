@@ -1,41 +1,54 @@
 'use strict';
 const enumAcoes = require('../enum/enum-acoes');
 const questionador = require('./questionador');
-const rename = require("gulp-rename");
+const acionador = require('./acionador');
 
 
 exports.acao = (atual) => {
 
     switch (atual.acao) {
         case enumAcoes.novoApiNodeMongoose:
-            atual.log("novo api");
             questionador.perguntasNovoApiNodeMongoose(atual)
                 .then(data => {
-                    atual.fs.copyTpl(
-                        atual.templatePath('./padraoApiMongoose'),
-                        atual.destinationPath('./generators/temp'), {
-                            nomeProjeto: data.nomeProjeto,
-                            nomeExternoProjeto: data.nomeExternoProjeto,
-                            descricaoProjeto: data.descricaoProjeto,
-                            chaveMongo: data.chaveMongo,
-                            chaveSendgrid: data.chaveSendgrid
-                        }
-                    );
+                    acionador.novoProjetoApiNodeMongoose(atual, data);
                 });
             break;
         case enumAcoes.novaEntidadeApiNodeMongoose:
-            atual.log("novo api");
-            questionador.perguntasNovoApiNodeMongoose(atual)
+            questionador.perguntasNovaEntidade(atual)
                 .then(data => {
-                    console.log("retorno questionador", data);
-                    atual.registerTransformStream(rename(function (path) {
-                        path.basename = path.basename.replace(/(<%=entidade%>)/g, data.nomeProjeto);
-                        path.dirname = path.dirname.replace(/(<%=entidade%>)/g, data.nomeProjeto);
-                    }));
-                    atual.fs.copyTpl(
-                        atual.templatePath('./modelo'),
-                        atual.destinationPath('./generators/temp'), { entidade: data.nomeProjeto }
-                    );
+                    acionador.renomearEntidade(atual, data);
+                    acionador.novoModeloApiNodeMongoose(atual, data);
+                    acionador.novoRepositorioApiNodeMongoose(atual, data);
+                    acionador.novoControleApiNodeMongoose(atual, data);
+                    acionador.novoRotaApiNodeMongoose(atual, data);
+                });
+            break;
+        case enumAcoes.novoModeloApiNodeMongoose:
+            questionador.perguntasNovaEntidade(atual)
+                .then(data => {
+                    acionador.renomearEntidade(atual, data);
+                    acionador.novoModeloApiNodeMongoose(atual, data);
+                });
+            break;
+        case enumAcoes.novoControleApiNode:
+            questionador.perguntasNovaEntidade(atual)
+                .then(data => {
+                    acionador.renomearEntidade(atual, data);
+                    acionador.novoControleApiNodeMongoose(atual, data);
+                });
+            break;
+        case enumAcoes.novoRepositorioApiNodeMongoose:
+            questionador.perguntasNovaEntidade(atual)
+                .then(data => {
+                    acionador.renomearEntidade(atual, data);
+                    acionador.novoRepositorioApiNodeMongoose(atual, data);
+                });
+            break;
+        case enumAcoes.novaRotaApiNode:
+            questionador.perguntasNovaEntidade(atual)
+                .then(data => {
+                    acionador.renomearEntidade(atual, data);
+                    acionador.novoRotaApiNodeMongoose(atual, data);
                 });
             break;
     }

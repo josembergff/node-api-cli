@@ -2,14 +2,13 @@ const Generator = require('yeoman-generator');
 const yosay = require('yosay');
 const gerador = require('./acoes/gerador');
 const enumAcoes = require('./enum/enum-acoes');
-const rename = require("gulp-rename");
 module.exports = class extends Generator {
     constructor(args, opts) {
         super(args, opts);
     }
 
     initializing() {
-        this.log(yosay('Bem-vindo ao gerênciador de projetos de API em Node.js!'));
+        this.log(yosay('Bem-vindo ao gerênciador de projeto de API em Node.js!'));
     }
 
     default() { }
