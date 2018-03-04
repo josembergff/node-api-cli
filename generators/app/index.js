@@ -1,24 +1,57 @@
 const Generator = require('yeoman-generator');
-
+const yosay = require('yosay');
+const gerador = require('./acoes/gerador');
+const enumAcoes = require('./enum/enum-acoes');
+const rename = require("gulp-rename");
 module.exports = class extends Generator {
     constructor(args, opts) {
         super(args, opts);
-
-        this.argument('action', { type: String, required: true });
-        this.argument('name', { type: String, required: false });
-        this.option('type', { type: Number, required: false });
     }
 
-    default() {
-        this.composeWith(require.resolve('./actions/init.js'), {action: this.options.action, entity:this.options.entity});
-        this.composeWith(require.resolve('./actions/generate.js'), { action: this.options.action, entity: this.options.entity });
+    initializing() {
+        this.log(yosay('Bem-vindo ao gerênciador de projetos de API em Node.js!'));
     }
+
+    default() { }
 
     prompting() {
-        //this.log(this.templatePath() + ' - ' + this.destinationPath());
+        var atual = this;
+        this.prompt({
+            type: 'list',
+            name: 'type',
+            message: 'Escolha o que deseja fazer no seu projeto?',
+            choices: [{
+                name: 'Criar novo projeto api em node com modelo de banco do Mongoose.',
+                value: enumAcoes.novoApiNodeMongoose
+            },
+            {
+                name: 'Criar nova Entidade (modelo, controle, repositorio e rota) com modelo de banco do Mongoose.',
+                value: enumAcoes.novaEntidadeApiNodeMongoose
+            },
+            {
+                name: 'Criar nova Rota.',
+                value: enumAcoes.novaRotaApiNode
+            },
+            {
+                name: 'Criar novo Controle.',
+                value: enumAcoes.novoControleApiNode
+            },
+            {
+                name: 'Criar novo Repositório.',
+                value: enumAcoes.novoRepositorioApiNodeMongoose
+            },
+            {
+                name: 'Criar novo Modelo de banco do Mongoose.',
+                value: enumAcoes.novoModeloApiNodeMongoose
+            }
+            ]
+        }).then(function (tipo) {
+            atual.acao = tipo.type;
+            gerador.acao(atual);
+        });
     }
 
     writing() {
-        //this.log("Api Node Cli iniciado!");
+
     }
 };
