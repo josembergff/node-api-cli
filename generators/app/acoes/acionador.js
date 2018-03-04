@@ -19,7 +19,7 @@ exports.novoProjetoApiNodeMongoose = (atual, data) => {
             chaveSendgrid: data.chaveSendgrid
         }
     );
-    atual.log('Obs.: Após criado o projeto novo, confirme as configurações de acesso ao Mongo e SendGrid em "src/config.js".');
+    atual.log('Obs.: Após criado o projeto novo, confirme as configurações de acesso ao Mongo e SendGrid em "src/config.js". Execute o "npm install" atualizar os módulos.');
 };
 
 exports.novoRepositorioApiNodeMongoose = (atual, data) => {
