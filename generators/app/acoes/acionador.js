@@ -1,5 +1,7 @@
 'use strict';
 const rename = require("gulp-rename");
+const destino = '';
+// destino = './generators/temp';
 
 exports.renomearEntidade = (atual, data) => {
     atual.registerTransformStream(rename(function (path) {
@@ -11,7 +13,7 @@ exports.renomearEntidade = (atual, data) => {
 exports.novoProjetoApiNodeMongoose = (atual, data) => {
     atual.fs.copyTpl(
         atual.templatePath('./padraoApiMongoose/estrutura'),
-        atual.destinationPath('./generators/temp'), {
+        atual.destinationPath(destino), {
             nomeProjeto: data.nomeProjeto,
             nomeExternoProjeto: data.nomeExternoProjeto,
             descricaoProjeto: data.descricaoProjeto,
@@ -25,7 +27,7 @@ exports.novoProjetoApiNodeMongoose = (atual, data) => {
 exports.novoRepositorioApiNodeMongoose = (atual, data) => {
     atual.fs.copyTpl(
         atual.templatePath('./padraoApiMongoose/repositorio'),
-        atual.destinationPath('./generators/temp'), {
+        atual.destinationPath(destino), {
             nomeEntidade: data.nomeEntidade,
             nomeExternoEntidade: data.nomeExternoEntidade,
             nomeExternoEntidadePlural: data.nomeExternoEntidadePlural
@@ -36,7 +38,7 @@ exports.novoRepositorioApiNodeMongoose = (atual, data) => {
 exports.novoModeloApiNodeMongoose = (atual, data) => {
     atual.fs.copyTpl(
         atual.templatePath('./padraoApiMongoose/modelo'),
-        atual.destinationPath('./generators/temp'), {
+        atual.destinationPath(destino), {
             nomeEntidade: data.nomeEntidade,
             nomeExternoEntidade: data.nomeExternoEntidade,
             nomeExternoEntidadePlural: data.nomeExternoEntidadePlural
@@ -48,7 +50,7 @@ exports.novoModeloApiNodeMongoose = (atual, data) => {
 exports.novoControleApiNodeMongoose = (atual, data) => {
     atual.fs.copyTpl(
         atual.templatePath('./padraoApiMongoose/controle'),
-        atual.destinationPath('./generators/temp'), {
+        atual.destinationPath(destino), {
             nomeEntidade: data.nomeEntidade,
             nomeExternoEntidade: data.nomeExternoEntidade,
             nomeExternoEntidadePlural: data.nomeExternoEntidadePlural
@@ -59,7 +61,7 @@ exports.novoControleApiNodeMongoose = (atual, data) => {
 exports.novoRotaApiNodeMongoose = (atual, data) => {
     atual.fs.copyTpl(
         atual.templatePath('./padraoApiMongoose/rota'),
-        atual.destinationPath('./generators/temp'), {
+        atual.destinationPath(destino), {
             nomeEntidade: data.nomeEntidade,
             nomeExternoEntidade: data.nomeExternoEntidade,
             nomeExternoEntidadePlural: data.nomeExternoEntidadePlural
