@@ -10,16 +10,6 @@ const schema = new Schema({
         trim: true,
         unique: true
     },
-    descricao: {
-        type: String,
-        required: false,
-        trim: true
-    },
-    ativo: {
-        type: Boolean,
-        required: true,
-        default: true
-    },
     criacao: {
         type: Date,
         required: true,
@@ -29,17 +19,6 @@ const schema = new Schema({
         type: Date,
         required: false
     },
-    usuarios: [{
-        usuario: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Usuario'
-        },
-        dataCriacao: {
-            type: Date,
-            required: true,
-            default: Date.now
-        }
-    }],
     criador: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Usuario',
