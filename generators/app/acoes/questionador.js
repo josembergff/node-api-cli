@@ -1,11 +1,11 @@
 'use strict';
 
 exports.perguntasNovoApiNodeMongoose = (atual) => {
-    return atual.prompt(
+    return atual.prompt([
         {
             type: 'input',
             name: 'nomeProjeto',
-            message: 'Qual o nome deste novo projeto API em Node com Mongoose (sem acentos, espaços e caracteres especiais):',
+            message: 'Qual o nome deste novo projeto API em Node com Mongoose (sem acentos, somente em minúsculas, espaços e caracteres especiais):',
             default: 'novoprojeto'
         },
         {
@@ -30,11 +30,11 @@ exports.perguntasNovoApiNodeMongoose = (atual) => {
             message: 'Chave de envio de email do SendGrid.',
             default: 'configurarChaveSendgridDepois'
         }
-    );
+    ]);
 };
 
 exports.perguntasNovaEntidade = (atual) => {
-    return atual.prompt(
+    return atual.prompt([
         {
             type: 'input',
             name: 'nomeEntidade',
@@ -53,5 +53,5 @@ exports.perguntasNovaEntidade = (atual) => {
             message: 'Qual o nome externo desta nova entidade no plural:',
             default: 'Clientes'
         }
-    );
+    ]);
 }
