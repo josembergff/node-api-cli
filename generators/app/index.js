@@ -20,27 +20,27 @@ module.exports = class extends Generator {
             name: 'type',
             message: 'Escolha o que deseja fazer no seu projeto?',
             choices: [{
-                name: 'Criar novo projeto api em node com modelo de banco do Mongoose.',
+                name: 'Criar novo projeto API com MongoDB:',
                 value: enumAcoes.novoApiNodeMongoose
             },
             {
-                name: 'Criar nova Entidade (modelo, controle, repositorio e rota) com modelo de banco do Mongoose.',
+                name: 'Criar nova Entidade com MongoDB:',
                 value: enumAcoes.novaEntidadeApiNodeMongoose
             },
             {
-                name: 'Criar nova Rota.',
+                name: 'Criar nova Rota:',
                 value: enumAcoes.novaRotaApiNode
             },
             {
-                name: 'Criar novo Controle.',
+                name: 'Criar novo Controle:',
                 value: enumAcoes.novoControleApiNode
             },
             {
-                name: 'Criar novo Repositório.',
+                name: 'Criar novo Repositório com Mongoose:',
                 value: enumAcoes.novoRepositorioApiNodeMongoose
             },
             {
-                name: 'Criar novo Modelo de banco do Mongoose.',
+                name: 'Criar novo Modelo do Mongoose:',
                 value: enumAcoes.novoModeloApiNodeMongoose
             }
             ]
