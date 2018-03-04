@@ -1,6 +1,6 @@
 {
   "name": "<%= nomeProjeto %>",
-  "version": "3.0.0",
+  "version": "0.0.1",
   "description": "<%= descricaoProjeto %>",
   "main": "./bin/server.js",
   "scripts": {
