@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const controle = require('../controles/controle-<%=nomeEntidade%>');
 const servicoAutenticacao = require('../servicos/servico-autenticacao');
-const controleRegistroCrud = require('../controles/controle-<%=nomeEntidade%>');
+const controleRegistroCrud = require('../controles/controle-registro-crud');
 
 router.post('/',
     servicoAutenticacao.autorizar,
