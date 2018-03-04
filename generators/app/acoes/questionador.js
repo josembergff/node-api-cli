@@ -23,12 +23,12 @@ exports.perguntasNovoApiNodeMongoose = (atual) => {
             type: 'input',
             name: 'chaveMongo',
             message: 'Chave de conexão com a base mongo.',
-            default: 'configurarChaveMongoDepois'
+            default: 'configurar-Chave-Mongo-Depois'
         }, {
             type: 'input',
             name: 'chaveSendgrid',
             message: 'Chave de envio de email do SendGrid.',
-            default: 'configurarChaveSendgridDepois'
+            default: 'configurar-Chave-Sendgrid-Depois'
         }
     ]);
 };
@@ -39,19 +39,20 @@ exports.perguntasNovaEntidade = (atual) => {
             type: 'input',
             name: 'nomeEntidade',
             message: 'Qual o nome da Entidade que será criada:',
-            default: 'Cliente'
+            default: 'grupoCliente',
+            store: true
         },
         {
             type: 'input',
             name: 'nomeExternoEntidade',
             message: 'Qual o nome externo desta nova entidade:',
-            default: 'Cliente Comercial'
+            default: 'Grupo Cliente'
         },
         {
             type: 'input',
             name: 'nomeExternoEntidadePlural',
             message: 'Qual o nome externo desta nova entidade no plural:',
-            default: 'Clientes'
+            default: 'Grupos Cliente'
         }
     ]);
 }

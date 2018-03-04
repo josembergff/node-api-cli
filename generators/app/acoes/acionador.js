@@ -19,6 +19,7 @@ exports.novoProjetoApiNodeMongoose = (atual, data) => {
             chaveSendgrid: data.chaveSendgrid
         }
     );
+    atual.log('Obs.: Após criado o projeto novo, confirme as configurações de acesso ao Mongo e SendGrid em "src/config.js".');
 };
 
 exports.novoRepositorioApiNodeMongoose = (atual, data) => {
@@ -41,7 +42,7 @@ exports.novoModeloApiNodeMongoose = (atual, data) => {
             nomeExternoEntidadePlural: data.nomeExternoEntidadePlural
         }
     );
-    atual.log('Obs.: Após criado o arquivo do modelo é necessário adicionar nas configurações do projeto no arquivo "src/config.js".');
+    atual.log('Obs.: Após criado o arquivo do modelo é necessário adicionar nas configurações do projeto no arquivo "src/app.js".');
 };
 
 exports.novoControleApiNodeMongoose = (atual, data) => {
@@ -64,5 +65,5 @@ exports.novoRotaApiNodeMongoose = (atual, data) => {
             nomeExternoEntidadePlural: data.nomeExternoEntidadePlural
         }
     );
-    atual.log('Obs.: Após criado o arquivo de rota é necessário adicionar nas configurações do projeto no arquivo "src/config.js".');
+    atual.log('Obs.: Após criado o arquivo de rota é necessário adicionar nas configurações do projeto no arquivo "src/app.js".');
 };
