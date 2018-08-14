@@ -20,12 +20,12 @@ npm install -g node-api-cli
 3. E com isso o node-api-cli estará disponível para uso executando:
 
 ```bash
-nac
+node-api-cli
 ```
 
 ## Opções disponíveis
 
-Ao executar o comando inicial "nac" poderá escolher uma das opções abaixo:
+Ao executar o comando inicial "node-api-cli" poderá escolher uma das opções abaixo:
 
 - `Criar novo projeto API com MongoDB`: que cria uma estrutura padrão de projeto API em NodeJs utilizando o MongoDB;
 - `Criar nova Entidade com MongoDB`: que cria um modelo, controle, repositório e rota padrão da entidade utilizando o MongoDB;

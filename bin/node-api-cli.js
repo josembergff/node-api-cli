@@ -2,7 +2,7 @@
 
 const assert = require("assert")
 const camelCaseKeys = require("camelcase-keys")
-const debug = require("debug")("loopback:cli")
+const debug = require("debug")("nodeapi:cli")
 const minimist = require("minimist")
 const path = require("path")
 
@@ -27,7 +27,7 @@ if (opts.version) {
 }
 
 // Tell the generator to replace "yo loopback:" with "lb"
-process.env.SLC_COMMAND = "nac"
+process.env.SLC_COMMAND = "node-api-cli"
 
 // NOTE(bajtos) Loading generator-node-api-cli takes about a second,
 // therefore I am intentionally loading it only after we have
@@ -54,11 +54,11 @@ process.chdir(cwd) // Switch back
 
 const args = opts._
 const originalCommand = args.shift()
-let command = "nac:" + (originalCommand || "app")
+let command = "node-api-cli:" + (originalCommand || "app")
 const supportedCommands = env.getGeneratorsMeta()
 
 if (!(command in supportedCommands)) {
-  command = "nac:app"
+  command = "node-api-cli:app"
   args.unshift(originalCommand)
   args.unshift(command)
 } else {
