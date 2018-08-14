@@ -1,0 +1,25 @@
+{
+  "name": "nodeapicli",
+  "version": "1.1.6",
+  "description": "Node structure builder for creating a ready-to-use api",
+  "main": "bin/nodeapicli.js",
+  "author": "Josemberg Ferreira",
+  "license": "ISC",
+  "keywords": [
+    "yeoman-generator",
+    "node api",
+    "node cli",
+    "api node",
+    "node api cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josembergff/node-api-cli"
+  },
+  "dependencies": {
+    "camelcase-keys": "^4.2.0",
+    "debug": "^3.1.0",
+    "generator-node-api-cli": "^1.1.5",
+    "minimist": "^1.2.0"
+  }
+}
