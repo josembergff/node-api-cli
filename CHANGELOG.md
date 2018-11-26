@@ -1,11 +1,11 @@
-Change Log
-===
+# Change Log
 
-v1.1.0
----
+## v1.1.0
 
 <!-- ## :tada: Features -->
+
 ## Features
+
 - Adicionado a opção `Criar novo projeto API com MongoDB`, que cria uma estrutura padrão de projeto API em NodeJs utilizando o MongoDB;
 - Adicionado a opção `Criar nova Entidade com MongoDB`, que cria um modelo, controle, repositório e rota padrão da entidade utilizando o MongoDB;
 - Adicionado a opção `Criar nova Rota`, que cria uma rota padrão de projeto API em NodeJs;
@@ -15,5 +15,16 @@ v1.1.0
 
 <!-- ## :hammer_and_wrench: Bugfixes -->
 
+## v1.2.0
+
+<!-- ## :tada: Features -->
+
+## Features
+
+- Adicionado chamado direto ao comando "node-api-cli".
+
+<!-- ## :hammer_and_wrench: Bugfixes -->
+
 ## Bugfixes
+
 Nenhum reportado até o momento.

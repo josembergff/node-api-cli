@@ -1,28 +1,29 @@
 {
   "name": "node-api-cli",
-  "version": "1.1.7",
+  "version": "1.2.0",
   "description": "Node structure builder for creating a ready-to-use api",
   "main": "bin/node-api-cli.js",
   "author": "Josemberg Ferreira",
   "license": "ISC",
   "bin": {
-    "lb": "bin/node-api-cli.js"
+    "node-api-cli": "bin/node-api-cli.js"
   },
   "keywords": [
-    "yeoman-generator",
     "node api",
     "node cli",
     "api node",
-    "node api cli"
+    "node api cli",
+    "node cli api"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/josembergff/node-api-cli"
   },
   "dependencies": {
-    "camelcase-keys": "^4.2.0",
-    "debug": "^3.1.0",
-    "generator-node-api-cli": "^1.1.5",
-    "minimist": "^1.2.0"
+    "child_process": "^1.0.2",
+    "generator-node-api-cli": "^1.2.1",
+    "inquirer": "^6.2.0",
+    "yo": "^2.0.5",
+    "yosay": "^2.0.2"
   }
 }
