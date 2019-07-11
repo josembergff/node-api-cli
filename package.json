@@ -22,8 +22,8 @@
   "dependencies": {
     "child_process": "^1.0.2",
     "generator-node-api-cli": "^1.2.1",
-    "inquirer": "^6.2.0",
-    "yo": "^2.0.5",
+    "inquirer": "^6.5.0",
+    "yo": "^2.0.6",
     "yosay": "^2.0.2"
   }
 }
